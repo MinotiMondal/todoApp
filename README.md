@@ -6,7 +6,7 @@ making the app reactive and easy to maintain.
 
 ### State Management
 - **`GetX`**:
-    - Handles reactive state management, dependency injection, and routing.
+    - Handles reactive state management, dependency injection.
     - Reduces boilerplate while improving code maintainability.
 
 ### Features
