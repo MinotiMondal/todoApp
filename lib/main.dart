@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'todo/taskListScreen.dart';
+import 'package:to_do_application/new/taskListPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'To-Do List',
-      home: TaskListScreen(),
+      home: TaskListPage(),
     );
   }
 }
