@@ -54,13 +54,29 @@ class _EditTaskPageState extends State<EditTaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Edit Task')),
+      appBar: AppBar(          backgroundColor: Colors.deepPurpleAccent,
+          title: Text('Edit Task')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            TextField(controller: _titleController, decoration: InputDecoration(labelText: 'Title')),
-            TextField(controller: _noteController, decoration: InputDecoration(labelText: 'Note')),
+            Align(
+                alignment: Alignment.topLeft,
+                child: const Text("Task Title",style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400),)),
+            const SizedBox(height: 10,),
+            TextField(controller: _titleController, decoration: InputDecoration( border: OutlineInputBorder(
+                borderSide: new BorderSide(color: Colors.teal)
+            ),labelText: 'Title')),
+            const SizedBox(height: 10,),
+
+            Align(
+                alignment: Alignment.topLeft,
+
+                child: const Text("Note",style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400),)),
+            SizedBox(height: 10,),
+            TextField(controller: _noteController, decoration: InputDecoration( border: OutlineInputBorder(
+                borderSide: new BorderSide(color: Colors.teal)
+            ),labelText: 'Note')),
             SizedBox(height: 16),
             Row(
               children: [
@@ -103,7 +119,14 @@ class _EditTaskPageState extends State<EditTaskPage> {
               ],
             ),
             SizedBox(height: 24),
-            ElevatedButton(onPressed: _submit, child: Text('Update Task')),
+            SizedBox(
+              width: double.infinity,
+
+              child: ElevatedButton(  style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepPurpleAccent, // Button color
+                foregroundColor: Colors.white, // Text color
+              ),onPressed: _submit, child: Text('Update Task')),
+            ),
           ],
         ),
       ),
