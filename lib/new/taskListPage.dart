@@ -10,7 +10,7 @@ class TaskListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('To-Do List')),
+      appBar: AppBar(backgroundColor: Colors.deepPurpleAccent,title: const Text('To-Do List',style: TextStyle(fontWeight: FontWeight.w400),)),
       body: Obx(() {
         if (_taskController.taskList.isEmpty) {
           return FutureBuilder(
@@ -24,7 +24,6 @@ class TaskListPage extends StatelessWidget {
             },
           );
         }
-
         return ListView.builder(
           itemCount: _taskController.taskList.length,
           itemBuilder: (context, index) {
@@ -52,7 +51,7 @@ class TaskListPage extends StatelessWidget {
       }),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Get.to(() => AddTaskPage()),
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add, color: Colors.purple,),
       ),
     );
   }

@@ -19,7 +19,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
 
   void _submit() {
     if (_titleController.text.isEmpty || _noteController.text.isEmpty || _selectedDate == null || _selectedTime == null) {
-      Get.snackbar('Error', 'All fields are required');
+      Get.snackbar('Error', 'All fields are required',colorText: Colors.black,backgroundColor: Colors.pink);
       return;
     }
 
