@@ -29,7 +29,19 @@ class TaskListPage extends StatelessWidget {
           itemBuilder: (context, index) {
             final task = _taskController.taskList[index];
             return ListTile(
-              title: Text(task.title),
+              leading: Checkbox(
+                value: task.completed,
+                onChanged: (value) {
+                  _taskController.toggleTaskCompleted(task);
+                },
+              ),
+              title: Text(
+                task.title,
+                style: TextStyle(
+                  decoration: task.completed ? TextDecoration.lineThrough : null,
+                  color: task.completed ? Colors.grey : null,
+                ),
+              ),
               subtitle: Text('${task.note}\n${task.date} ${task.time}'),
               isThreeLine: true,
               trailing: Row(
@@ -46,6 +58,7 @@ class TaskListPage extends StatelessWidget {
                 ],
               ),
             );
+
           },
         );
       }),

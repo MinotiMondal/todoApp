@@ -20,7 +20,9 @@ class DBHelper {
           title TEXT,
           note TEXT,
           date TEXT,
-          time TEXT
+          time TEXT,
+          completed INTEGER
+
         )
       ''');
     });

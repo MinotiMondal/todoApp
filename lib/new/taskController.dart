@@ -29,5 +29,17 @@ class TaskController extends GetxController {
     await _dbHelper.updateTask(task);
     fetchTasks();
   }
+  void toggleTaskCompleted(Task task) {
+    Task updatedTask = Task(
+      id: task.id,
+      title: task.title,
+      note: task.note,
+      date: task.date,
+      time: task.time,
+      completed: !task.completed,
+    );
+
+    updateTask(updatedTask);
+  }
 
 }

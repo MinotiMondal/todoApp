@@ -4,8 +4,11 @@ class Task {
   String note;
   String date;
   String time;
+  bool completed;
 
-  Task({this.id, required this.title, required this.note, required this.date, required this.time});
+
+  Task({this.id, required this.title, required this.note, required this.date, required this.time,    this.completed = false,
+  });
 
   factory Task.fromMap(Map<String, dynamic> json) => Task(
     id: json['id'],
@@ -13,6 +16,8 @@ class Task {
     note: json['note'],
     date: json['date'],
     time: json['time'],
+    completed: json['completed'] == 1,
+
   );
 
   Map<String, dynamic> toMap() => {
@@ -21,5 +26,7 @@ class Task {
     'note': note,
     'date': date,
     'time': time,
+    'completed': completed ? 1 : 0,
+
   };
 }
