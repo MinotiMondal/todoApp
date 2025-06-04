@@ -38,7 +38,6 @@ class TaskController extends GetxController {
       time: task.time,
       completed: !task.completed,
     );
-
     updateTask(updatedTask);
   }
 

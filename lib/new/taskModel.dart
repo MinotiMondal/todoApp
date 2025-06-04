@@ -17,9 +17,8 @@ class Task {
     date: json['date'],
     time: json['time'],
     completed: json['completed'] == 1,
-
   );
-
+//sed to convert  Task object into a Map<String, dynamic>,
   Map<String, dynamic> toMap() => {
     'id': id,
     'title': title,
@@ -27,6 +26,5 @@ class Task {
     'date': date,
     'time': time,
     'completed': completed ? 1 : 0,
-
   };
 }

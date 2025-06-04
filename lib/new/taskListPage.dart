@@ -62,6 +62,7 @@ class TaskListPage extends StatelessWidget {
           },
         );
       }),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () => Get.to(() => AddTaskPage()),
         child: const Icon(Icons.add, color: Colors.purple,),

@@ -3,6 +3,7 @@ import 'package:path/path.dart';
 import 'package:to_do_application/new/taskModel.dart';
 
 class DBHelper {
+
   static Database? _db;
 
   Future<Database> get db async {
@@ -43,6 +44,7 @@ class DBHelper {
     final dbClient = await db;
     return await dbClient.delete('tasks', where: 'id = ?', whereArgs: [id]);
   }
+
   Future<int> updateTask(Task task) async {
     final dbClient = await db;
     return await dbClient.update(
