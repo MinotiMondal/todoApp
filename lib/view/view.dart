@@ -6,8 +6,12 @@ class view extends StatelessWidget{
   @override
   Widget build (BuildContext context){
     return Scaffold(
-       body: Text("hello"),
-      // hello
+
+       body: Column(
+         children: [
+           Text("hello"),
+         ],
+       ),
     );
   }
 }
